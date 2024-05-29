@@ -1,0 +1,9 @@
+html, body{
+    background-image: url("foto/pexels-goldcircuits-2559484.jpg");
+    background-position: center, top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h4{
+    color: white;
+}
