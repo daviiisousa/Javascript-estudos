@@ -1,0 +1,12 @@
+{
+    "usuarios":[
+        {
+            "nome":"davi",
+            "idade":"18"
+        },
+        {
+            "nome":"diego",
+            "idade":"22"
+        }
+    ]
+}
