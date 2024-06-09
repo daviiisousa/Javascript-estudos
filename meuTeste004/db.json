@@ -1,0 +1,14 @@
+{
+    "remedios":[
+        {
+            "nome": "Dipirona",
+            "quantidade": "20",
+            "descriçao": "Usado para aliviar dores e diminuir febre"
+        },
+        {
+            "nome": "ibuprofeno",
+            "quantidade": "15",
+            "descriçao": "Usado para aliviar dores, diminuir a febre e reduçao de inflamaçao "
+        }
+    ]
+}
