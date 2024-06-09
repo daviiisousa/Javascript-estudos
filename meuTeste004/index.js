@@ -15,13 +15,7 @@ function alimentaTabela(remedios){
         return `
        
         <table class="table table-hover">
-            <thead class="table-dark">
-                <tr>
-                    <th>Nome</th>
-                    <th>Quantiade</th>
-                    <th>Desriçao</th>
-                </tr>
-            </thead>
+            
             <tbody>
                 <tr>
                     <td>${remedio.nome}</td>
@@ -39,7 +33,7 @@ function alimentaTabela(remedios){
 
 function pesquisar(){
     const pesquisaRemedio = document.getElementById('verificar').value
-    if(pesquisaRemedio === ""){
+    if(pesquisaRemedio === "" ||  !/^[^\d]+$/.test(pesquisaRemedio)){
         alert('digite um nome de remedio valido')
     }else if(pesquisaRemedio){
         alert('temos no estoque! clique em ok depois em sair verifique')

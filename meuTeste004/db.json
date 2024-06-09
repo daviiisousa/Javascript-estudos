@@ -6,9 +6,14 @@
             "descriçao": "Usado para aliviar dores e diminuir febre"
         },
         {
-            "nome": "ibuprofeno",
+            "nome": "Ibuprofeno",
             "quantidade": "15",
             "descriçao": "Usado para aliviar dores, diminuir a febre e reduçao de inflamaçao "
+        },
+        {
+            "nome":"Omeprazol",
+            "quantidade":"10",
+            "descriçao":"Utilizado para tratar refluxo gastroesofágico, úlceras gástricas e duodenais, síndrome de Zollinger-Ellison e infecções por Helicobacter pylori"
         }
     ]
 }
