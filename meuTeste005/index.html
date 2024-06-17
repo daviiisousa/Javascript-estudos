@@ -11,28 +11,29 @@
         <h1>Cadastro de Usuarios</h1>
     </header>
     <main>
-        <form class="container text-center">
-            <div class="mb-3">
-              <h2>
-                <label  for="nome" class="form-label row align-items-start">Nome</label>
-              </h2>
-              <input type="email" class="form-control" id="nome" >
-              
-            </div>
+       <form> 
+        <div>
+            <label for="nome">nome</label>
+            <input type="text" name="nome" id="nome">
+        </div>
+        <div>
+            <label for="nome">idade</label>
+            <input type="number" name="idade" id="idade">
+        </div>
+        <div>
+            <label for="nome">email</label>
+            <input type="email" name="email" id="email">
+            <input type="button" onclick="pesquisar()" value="pesquisar">
+        </div>
+       </form>
 
-            <div class="mb-3">
-              <h2>
-                <label for="idade" class="form-label row align-items-start">idade</label>
-              </h2>
-              <input type="password" class="form-control" id="idade">
-            </div>
+        <div id="res">
 
-            <button type="submit" class="btn btn-primary">pesquisar</button>
-          </form>
+        </div>
     </main>
     
     
-
+    <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 </body>
 </html>
