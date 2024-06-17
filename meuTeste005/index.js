@@ -95,7 +95,6 @@ async function salvarUsuario() {
         const payload = {
             nome: Nome,
             idade: Idade
-            
         }
     
         const requestOptions = {
@@ -113,5 +112,5 @@ async function salvarUsuario() {
 }
 
 document.addEventListener('DOMContentLoaded', carregarUsuarios)
-document.getElementById('procurar').addEventListener('click', salvarUsuario) 
+document.getElementById("procurar").addEventListener('click', salvarUsuario) 
 
