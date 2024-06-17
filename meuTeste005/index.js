@@ -45,10 +45,9 @@ async function carregarUsuarios(){
 
 function alimentaTabela(usuarios){
    
-
     const htmlUsuarios = usuarios.map(usuario =>{
-         `
-        <table class="table">
+        return `
+        <table>
   <thead>
     <tr>
       <th scope="col">nome</th>
@@ -60,7 +59,8 @@ function alimentaTabela(usuarios){
     <tr>
       <td>${usuario.nome}</td>
        <td>${usuario.idade}</td>
-       <td>${usuario.email}</td>
+       
+       
     </tr>
     
   </tbody>
@@ -73,11 +73,11 @@ function alimentaTabela(usuarios){
 }
 
 async function salvarUsuario() {
-    const nome = document.getElementById("nome").value
-    const idade = document.getElementById("idade").value
+    let Nome = document.getElementById("nome").value
+    let Idade = document.getElementById("idade").value
     // const email = document.getElementById("email").value
 
-    if (!nome) {
+    if (!Nome) {
         alert('erro')
         return;
     }
@@ -85,7 +85,7 @@ async function salvarUsuario() {
     //   alert('erro')
     //     return;
     // }
-    if (!idade) {
+    if (!Idade) {
         alert('erro')
         return;
     }
@@ -93,9 +93,9 @@ async function salvarUsuario() {
     let reader = new FileReader()
     reader.onload = async function() {
         const payload = {
-            nome: nome,
-            idade: idade
-            // email: email,
+            nome: Nome,
+            idade: Idade
+            
         }
     
         const requestOptions = {
@@ -104,9 +104,6 @@ async function salvarUsuario() {
         };
     
         await fetch("http://localhost:3000/usuarios", requestOptions)
-        
-        // const modalElement = document.getElementById("modal-usuario");
-        // bootstrap.Modal.getInstance(modalElement).hide()
     
         carregarUsuarios()
 
@@ -116,5 +113,5 @@ async function salvarUsuario() {
 }
 
 document.addEventListener('DOMContentLoaded', carregarUsuarios)
-document.getElementById('procurar').addEventListener('click', salvarUsuario)
+document.getElementById('procurar').addEventListener('click', salvarUsuario) 
 

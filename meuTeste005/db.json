@@ -2,13 +2,13 @@
     "usuarios":[
         {
             "nome":"davi",
-            "idade":"22",
-            "email": "sousadavi248@gmail.com"
+            "idade":"22"
+            
         },
         {
             "nome":"maria",
-            "idade":"23",
-            "email": "maria248@gmail.com" 
+            "idade":"23"
+            
         }
     ]
 }
