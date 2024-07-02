@@ -1,0 +1,21 @@
+{
+  "Usuarios": [
+    {
+      "nome": "Davi",
+      "idade": 18,
+      "email": "sousadavi333@gmail.com"
+    },
+    {
+      "id": "e405",
+      "nome": "vicky",
+      "idade": 22,
+      "email": "vicky345@tset.com"
+    },
+    {
+      "id": "d01f",
+      "nome": "kin",
+      "idade": 22,
+      "email": "ky345@tset.com"
+    }
+  ]
+}
