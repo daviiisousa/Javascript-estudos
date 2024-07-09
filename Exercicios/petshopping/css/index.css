@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Concert+One&display=swap');
+
+*{
+    font-family: "Acme", sans-serif;
+}
+
+
+nav#nav-header{
+    background-image: linear-gradient(to right, #FF4B91 100%, #cf3872 );
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: #FF7676;
+    font-family: "Concert One", sans-serif;
+}
+
+a{
+    color: white;
+}
+
+img#imagen-header{
+    height: 40vh;
+    width: 100vw;
+    object-fit: cover;
+    object-position: center;
+}
+
+img#foto-cachorro-banho{
+    height: 53vh;
+    object-fit: cover;
+}
+
+main{
+    background-color: #FFCD4B;
+}
+
+div#sobre{
+    background-color: white;
+    border-radius: 20px;
+}
+
+div#carrosel{
+    border-radius: 20px;
+}
+
+p {
+    line-height: 1.6;
+    text-align: start; 
+    text-indent: 20px;
+}
+
+section#servicos{
+    background-color: #FF4B91;
+    padding: 20px; 
+}
+
+h1#h1-section{
+    padding: 10px;
+    color: #FFCD4B;
+}
+
+div.card{
+    transition: 0.6s;
+}
+
+div.card:hover{
+    background-color: #FF4B91;
+    transform: scale(1.1);
+    transition: 0.6s;
+    color: #FFCD4B;
+}
+
+img#namaria{
+    height: 190px;
+    object-fit: cover;
+    object-position: top;
+}
+
+
+div#div-servicos{
+    background-color: #FFCD4B;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+li{
+    padding: 5px;
+}
+
+div#produtos{
+    background-color: #e3b541;
+    padding: 20px;
+    border-radius: 10px;
+}
+img.foto-grande{
+    height: 190px;
+    object-fit: cover;
+    object-position: center;
+}
+
+footer{
+    background-color: #0802A3;
+}
+
+footer  P{
+    color: white;
+}
+
+img.logo{
+    width: 3vw;
+    border-radius: 50%;
+}
+  
