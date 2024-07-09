@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+
+
+body{
+    background-color: #2596ce;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+h1{
+    font-family: "Tourney", sans-serif;
+    font-size: 3em;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h2{
+    font-family: "Margarine", sans-serif;
+    font-size: 2.3em;
+}
+
+ol{
+    font-family: "Amatic SC", sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+span{
+    color: black;
+}
+
+button{
+    background-color: #0c08e1;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-left: 10px;
+}
+
+button:hover{
+    background-color: #0b09b6;
+}
+
+input#task{
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    transition: 0.1s;
+}
+
+input#task:hover{
+    border: 3px solid #1b6bdc;
+    transition: 0.1s;
+}
+
