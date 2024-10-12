@@ -1,4 +1,5 @@
 const formulario = document.querySelector("#formulario");
+const btnCadastrar = document.querySelector('#btnCadastrar')
 const nome = formulario.nome;
 const email = formulario.email;
 const senha = formulario.senha;
@@ -19,6 +20,28 @@ formulario.addEventListener('submit',  (e) => {
 
      postUsuario();
 });
+
+getUsuarios()
+
+async function getUsuarios(){
+    const method = {
+        method: 'GET'
+    }
+    const usuarios = await fetch('http://localhost:3000/usuarios', method)
+    const dados = await usuarios.json()
+    console.log(dados)
+
+    dados.map((usuario) => {
+        
+
+        resposta.innerHTML += `
+        <div>
+        <img src="${usuario.foto}" >
+        <h1>${usuario.nome}</h1>
+        <h2> ${usuario.email} </h2>
+        </div>`
+    })
+}
 
 async function postUsuario() {
     const payload = {
