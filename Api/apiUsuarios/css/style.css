@@ -46,15 +46,28 @@ button{
 .resposta {
     display: flex;
     flex-wrap: wrap;
-
+    text-align: center;
     gap: 30px;
     align-items: center;
+}
+
+.resposta h1{
+    margin: 10px 0px;
+}
+
+.resposta h3{
+    color: #5e5c5c;
+    font-weight: 600;
 }
 
 .resposta div{
     box-shadow: 0px 0px  10px  rgb(122, 119, 119);
     border-radius: 10px;
     padding: 10px;
+}
+
+.resposta div:hover{
+    transform: scale(1.1);
 }
 
 @media (max-width: 1300px){
