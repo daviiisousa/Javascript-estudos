@@ -15,5 +15,23 @@ form.addEventListener("submit", (e) => {
   const ladoB = Number(form.ladoB.value);
   const ladoC = Number(form.ladoC.value);
 
-  
+  // Validação para verificar se é possível formar um triângulo
+  if (ladoA + ladoB <= ladoC || ladoA + ladoC <= ladoB || ladoB + ladoC <= ladoA) {
+    alert("Não pode formar um triângulo");
+    form.reset();
+    return;
+  }
+
+  // Verificar o tipo do triângulo
+  if (ladoA === ladoB && ladoA === ladoC) {
+    campo.innerText = "Pode formar um triângulo\nTipo: Equilátero";
+  } else if (
+    (ladoA === ladoB && ladoA !== ladoC) ||
+    (ladoA === ladoC && ladoA !== ladoB) ||
+    (ladoB === ladoC && ladoB !== ladoA)
+  ) {
+    campo.innerText = "Pode formar um triângulo\nTipo: Isósceles";
+  } else {
+    campo.innerText = "Pode formar um triângulo\nTipo: Escaleno";
+  }
 });
