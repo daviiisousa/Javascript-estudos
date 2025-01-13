@@ -1,37 +1,47 @@
 const form = document.querySelector('form');
-const campo = document.getElementById('campo')
+const campo = document.getElementById('campo');
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const nomeCidade = form.nome.value
+    const nomeCidade = form.nome.value.trim();
 
-    apiClima(nomeCidade)
-})
+    if (!nomeCidade) {
+        campo.innerHTML = `<p style="color: red;">Por favor, insira o nome de uma cidade.</p>`;
+        return;
+    }
 
-async function apiClima(city){
+    apiClima(nomeCidade);
+});
+
+async function apiClima(city) {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},BR&appid=3da709d7b1481d16e6aece8ac4e010ee`)
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},BR&appid=3da709d7b1481d16e6aece8ac4e010ee`);
 
-        if(!response.ok){
-            alert('erro na requisao');
-            return
+        if (!response.ok) {
+            campo.innerHTML = `<p style="color: red;">Erro: Não foi possível encontrar a cidade "${city}".</p>`;
+            return;
         }
 
-        const data = await response.json()
-        console.log(data)
+        const data = await response.json();
+        console.log(data);
 
-        campo.innerHTML = `<h3>${data.name}</h3>
-        <ul>
-            <li>Sensação: ${(data.main.feels_like).toString().slice(0,2)}°C </li>
-            <li>Clima: ${(data.main.temp).toString().slice(0,2)}°C </li>
-            <li>Humidade: ${data.main.humidity}</li>     
-        </ul>
-        <p>Descrição do clima: ${data.weather[0].description}</p>
-        `
+        // Conversão das temperaturas
+        const feelsLike = (data.main.feels_like - 273.15).toFixed(1); // Sensação térmica
+        const temp = (data.main.temp - 273.15).toFixed(1); // Temperatura atual
 
+        // Atualização do conteúdo
+        campo.innerHTML = `
+            <h3>${data.name}</h3>
+            <ul>
+                <li>Sensação térmica: ${feelsLike}°C</li>
+                <li>Temperatura atual: ${temp}°C</li>
+                <li>Humidade: ${data.main.humidity}%</li>
+            </ul>
+            <p>Descrição do clima: ${data.weather[0].description}</p>
+        `;
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        campo.innerHTML = `<p style="color: red;">Erro inesperado ao obter os dados climáticos. Tente novamente mais tarde.</p>`;
     }
 }
-
