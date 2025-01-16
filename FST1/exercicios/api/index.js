@@ -32,14 +32,16 @@ async function apiClima(city) {
 
         // Atualização do conteúdo
         campo.innerHTML = `
-            <h3>${data.name}</h3>
-            <ul>
-                <li>Sensação térmica: ${feelsLike}°C</li>
-                <li>Temperatura atual: ${temp}°C</li>
-                <li>Humidade: ${data.main.humidity}%</li>
+            <h3 class='lugar'>${data.name}</h3>
+            <ul class='lista'>
+                <li>Sensação térmica: <span>${feelsLike}°C</span></li>
+                <li>Temperatura atual: <span>${temp}°C</span></li>
+                <li>Humidade: <span>${data.main.humidity}%</span></li>
             </ul>
             <p>Descrição do clima: ${data.weather[0].description}</p>
         `;
+
+        form.reset()
     } catch (error) {
         console.log(error);
         campo.innerHTML = `<p style="color: red;">Erro inesperado ao obter os dados climáticos. Tente novamente mais tarde.</p>`;
