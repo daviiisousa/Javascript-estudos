@@ -9,45 +9,44 @@
 
 const form = document.querySelector("form");
 const campo = document.getElementById("campo");
-const btnDescriptografar = document.getElementById('btnDescriptografar')
-
-let mensagemCriptografadaPares = '';
-let mensagemCriptografadaImpar = ''
-let mensagemCriptografada = ''
-
-let mensagemDescriptografadaImpar = ''
-let mensagemDescriptografadaPares = ''
-let mensagemDescriptografada = ''
+const btnDescriptografar = document.getElementById("btnDescriptografar");
+let mensagemCriptografada = "";
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const mensagem = form.mensagem.value;
+  let mensagemCriptografadaPares = "";
+  let mensagemCriptografadaImpar = "";
 
-  for (let i = 0; i < mensagem.length; i++) {
+  campo.innerHTML = "";
+
+  const mensagem = form.mensagem.value;
+  const tamanho = mensagem.length;
+
+  for (let i = 0; i < tamanho; i++) {
     if (i % 2 !== 0) {
-        mensagemCriptografadaPares += mensagem[i]
+      mensagemCriptografadaPares += mensagem[i];
     } else {
-        mensagemCriptografadaImpar += mensagem[i]
+      mensagemCriptografadaImpar += mensagem[i];
     }
   }
 
-  mensagemCriptografada = mensagemCriptografadaPares + mensagemCriptografadaImpar
-  campo.innerHTML = `<h4> ${mensagemCriptografada} </h4>` 
+  mensagemCriptografada = mensagemCriptografadaPares + mensagemCriptografadaImpar;
+  campo.innerHTML = `<h4>${mensagemCriptografada}</h4>`;
 
   form.reset();
 });
 
-btnDescriptografar.addEventListener('click', () => {
-    for(let i = 0; i < mensagemCriptografada.length; i++){
-        if(i % 2 === 0){
-            mensagemDescriptografadaImpar += mensagemCriptografada[i]
-        }else{
-            mensagemDescriptografadaPares += mensagemCriptografada[i]
-        }
-        mensagemDescriptografada = mensagemDescriptografadaImpar + mensagemDescriptografadaPares
-        
-    }
-  campo.innerHTML = `<h4> ${mensagemDescriptografada} </h4>` 
+btnDescriptografar.addEventListener("click", () => {
+  let mensagemOriginal = "";
+  const meio = Math.ceil(mensagemCriptografada.length / 2);
+  let pares = mensagemCriptografada.slice(0, meio);
+  let impares = mensagemCriptografada.slice(meio);
 
-})
+  for (let i = 0; i < meio; i++) {
+    if (impares[i]) mensagemOriginal += impares[i]; // Primeiro grupo (posições pares)
+    if (pares[i]) mensagemOriginal += pares[i]; // Segundo grupo (posições ímpares)
+  }
+
+  campo.innerHTML = `<h4>${mensagemOriginal}</h4>`;
+});
