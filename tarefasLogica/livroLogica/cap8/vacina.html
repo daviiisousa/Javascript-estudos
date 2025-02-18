@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Vacinação</h1>
+    <hr />
+    <form>
+      <label for="valor">Valor da Vacina</label>
+      <input type="number" name="valor" id="valor" />
+      <br />
+      <label>Possui convênio:</label>
+      <label>
+        <input type="radio" name="convenio" id="convenioSim" value="sim" />
+        Sim
+      </label>
+      <label>
+        <input type="radio" name="convenio" id="convenioNao" value="nao" />
+        Não
+      </label>
+      <br />
+      <label for="tipo-convenio">Convênio</label>
+      <select name="tipo-convenio" id="tipoConvenio">
+        <option value="" disabled selected>selecione</option>
+        <option value="saude">Saúde animal</option>
+        <option value="amigo">Amigo dos Animais</option>
+      </select>
+      <br>
+      <button>Calcular desconto</button>
+    </form>
+    <div id="campo"></div>
+  </body>
+  <script src="./vacina.js"></script>
+</html>
